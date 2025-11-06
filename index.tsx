@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { GoogleGenAI, Chat } from "@google/genai";
 
 // --- CONFIGURATION ---
-// IMPORTANT: Replace this with your actual Cloud Run service URL
-const API_BASE_URL = 'https://your-cloud-run-service-url.a.run.app';
+// The API base URL is now relative to the domain, pointing to the Vercel Serverless Functions.
+const API_BASE_URL = '';
 
 // --- API HELPER FUNCTIONS ---
 const getAuthToken = () => sessionStorage.getItem('fto_token');
@@ -571,6 +571,7 @@ const AdminPanel = () => {
               <h3>安全提示</h3>
               <p className="security-note">
                   用户数据现在由安全的后端服务管理。所有密码都经过哈希加密处理，确保数据安全。
+                  <br /><strong>注意:</strong> 为演示目的，当前数据存储在内存中，服务重启后将重置。
               </p>
             </div>
         </div>
